@@ -40,7 +40,6 @@ public:
    double x_min1 = 0.5;
    double y_min1 = 0.5;
 
-
    double f_min2 = 1;
    double x_min2 = 1;
    double y_min2 = 1;

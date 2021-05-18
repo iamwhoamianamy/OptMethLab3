@@ -30,8 +30,7 @@ public:
    /// <returns>Количество итераций</returns>
    int FindExtremum(const Function& funct,
                     const vector<double>& x0,
-                    const double& f_eps, const double& xs_eps,
-                    ofstream& fout);
+                    const double& f_eps, const double& xs_eps);
 
    const double SQRT5 = sqrt(5);
    const double PI = 3.141592653589793238462;

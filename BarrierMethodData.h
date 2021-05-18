@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class BarrierMethod : public Function
+class BarrierMethodData : public Function
 {
 public:
    Test test;
@@ -14,10 +14,10 @@ public:
    double rg = 0;
    double rh = 0;
 
-   BarrierMethod(const Test& t_test, int t_funct_n) :
+   BarrierMethodData(const Test& t_test, int t_funct_n) :
       test(t_test), funct_n(t_funct_n) { }
 
-   BarrierMethod(const Test& t_test) : test(t_test) { }
+   BarrierMethodData(const Test& t_test) : test(t_test) { }
 
    double G(const vector<double>& x) const
    {

@@ -1,59 +1,41 @@
 ﻿#include <iostream>
 #include <fstream>
 #include "Gauss.h"
+#include "PenaltyMethodData.h"
 #include "PenaltyMethod.h"
 
 using namespace std;
 
-void PenaltyGTest()
+void PenaltyGTest(const string& file_name)
 {
    // Объект для хранения тестовых функций
    Test test = Test(0);
 
-   // Объект метода штрафныхф функций
-   PenaltyMethod penalty_method = PenaltyMethod(test);
+   // Объект с данными для метода штрафных функций
+   PenaltyMethodData penalty_method_data = PenaltyMethodData(test);
+
+   // Объект метода штрафных функций
+   PenaltyMethod penalty_method = PenaltyMethod(penalty_method_data);
 
    // Поток вывода
-   ofstream fout("result.txt");
-   cout << scientific;
+   ofstream fout(file_name);
+   //fout << fixed;
+
+   fout << setw(5) << "funct" << setw(6) << "r0" << setw(6) << "incr";
+   fout << setw(6) << "x0x" << setw(6) << "x0y";
+   fout << setw(8) << "eps" << setw(12) << "iterations" << setw(14) << "f_calc_count";
+   fout << setw(10) << "x" << setw(10) << "y" << setw(10) << "f" << endl;
 
    for(int i = 0; i < 4; i++)
    {
-      // Изменение штрафной функции
-      penalty_method.funct_n = i;
-
-      cout << "----------Penalty function " << i << "----------" << endl;
-
-      for(int j = 0; j < 100; j++)
-      {
-         // Объект метода Гаусса
-         Gauss gauss = Gauss(2);
-
-         // Изменение коэффициентов щтрафа
-         penalty_method.rg = j;
-         penalty_method.rh = 0;
-
-         cout << "-----Penalty factor " << j << "-----" << endl;
-
-         cout << "iterations: " << gauss.FindExtremum(penalty_method, { 2, -5 }, 1e-20, 1e-20, fout) << endl;
-
-         cout << "x: " << abs(gauss.curr[0] - test.x_min1) << endl;
-         cout << "y: " << abs(gauss.curr[1] - test.y_min1) << endl;
-         cout << "f: " << abs(test.f(gauss.curr) - test.f_min1) << endl;
-
-         //cout << "x: " << gauss.curr[0] << endl;
-         //cout << "y: " << gauss.curr[1] << endl;
-         //cout << "f: " << test.f(gauss.curr) << endl;
-
-         cout << "f_calc_count: " << gauss.f_calc_count << endl << endl;
-         gauss.max_iter_count = 0;
-      }
-
+      penalty_method.penalty_method_data.funct_n = i;
+      penalty_method.FindExtremum({ -5, 2 }, 0.0, 1.0, 1e-4, fout);
    }
+
    fout.close();
 }
 
 int main()
 {
-   PenaltyGTest();
+   PenaltyGTest("results/penalty_g_test.txt");
 }

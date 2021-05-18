@@ -143,10 +143,11 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BarrierMethod.h" />
+    <ClInclude Include="BarrierMethodData.h" />
     <ClInclude Include="Function.h" />
     <ClInclude Include="Gauss.h" />
     <ClInclude Include="PenaltyMethod.h" />
+    <ClInclude Include="PenaltyMethodData.h" />
     <ClInclude Include="Test.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>

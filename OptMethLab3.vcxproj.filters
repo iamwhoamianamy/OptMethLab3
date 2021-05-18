@@ -29,16 +29,19 @@
     <ClInclude Include="Test.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="PenaltyMethod.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="Gauss.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Function.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="BarrierMethod.h">
+    <ClInclude Include="BarrierMethodData.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="PenaltyMethodData.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="PenaltyMethod.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

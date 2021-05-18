@@ -10,8 +10,7 @@ Gauss::Gauss(const size_t& t_size) : size(t_size)
 
 int Gauss::FindExtremum(const Function& funct,
                  const vector<double>& x0,
-                 const double& f_eps, const double& xs_eps,
-                 ofstream& fout)
+                 const double& f_eps, const double& xs_eps)
 {
    prev = x0;
    curr = x0;
@@ -33,9 +32,8 @@ int Gauss::FindExtremum(const Function& funct,
             result_fit = false;
 
       prev = curr;
-   } while(iter_count < max_iter_count && result_fit == false);
+   } while(iter_count < max_iter_count && !result_fit);
 
-   fout << endl;
    return iter_count;
 }
 

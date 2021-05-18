@@ -1,0 +1,1 @@
+funct    r0  incr   x0x   x0y     eps  iterations  f_calc_count         x         y         f
