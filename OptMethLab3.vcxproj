@@ -143,6 +143,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BarrierMethod.h" />
     <ClInclude Include="BarrierMethodData.h" />
     <ClInclude Include="Function.h" />
     <ClInclude Include="Gauss.h" />

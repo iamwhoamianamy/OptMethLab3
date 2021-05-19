@@ -12,7 +12,6 @@ public:
    int funct_n = 0;
 
    double rg = 0;
-   double rh = 0;
 
    BarrierMethodData(const Test& t_test, int t_funct_n) :
       test(t_test), funct_n(t_funct_n) { }
@@ -28,18 +27,8 @@ public:
       }
    }
 
-   double H(const vector<double>& x) const
-   {
-      switch(funct_n)
-      {
-         case 0: return abs(test.h(x));
-         case 1: return pow(test.h(x), 2);
-         case 2: return pow(test.h(x), 4);
-      }
-   }
-
    double GetValue(const vector<double>& x) const override
    {
-      return test.f(x) + rg * G(x) + rh * H(x);
+      return test.f(x) + rg * G(x);
    }
 };
