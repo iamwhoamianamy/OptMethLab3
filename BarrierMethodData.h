@@ -24,6 +24,7 @@ public:
       {
          case 0: return - 1.0 / test.g(x);
          case 1: return -1.0 * log(-1.0 * test.g(x));
+         default: return 0;
       }
    }
 

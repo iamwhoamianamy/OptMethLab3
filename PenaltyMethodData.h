@@ -31,6 +31,7 @@ public:
             case 1: return pow(0.5 * (test.g(x) + abs(test.g(x))), 2);
             case 2: return pow(0.5 * (test.g(x) + abs(test.g(x))), 4);
             case 3: return 1.0 / test.g(x);
+            default: return 0;
          }
       }
    }
@@ -42,6 +43,7 @@ public:
          case 0: return abs(test.h(x));
          case 1: return pow(test.h(x), 2);
          case 2: return pow(test.h(x), 4);
+         default: return 0;
       }
    }
 
